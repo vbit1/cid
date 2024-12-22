@@ -15,8 +15,15 @@ pipeline {
         }
        stage('Build') {
             steps {
-                sh 'echo $PATH'
-                echo 'in build checking'
+                script {
+                    try {
+                        // Check if bash is available
+                        sh 'which bash || echo "bash not found"'
+                    } catch (Exception e) {
+                        echo "Error: ${e.message}"
+                    }
+                }
+            }
             }
         }
         stage('After build Stage') { 

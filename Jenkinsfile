@@ -7,9 +7,15 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('Checkout') {
+            steps {
+                // Checkout code from SCM (replace with your SCM details)
+                git branch: 'main', url: 'https://github.com/vbit1/cid.git'
+            }
+        }
        stage('Build') {
             steps {
-                //bash 'python app.py'
+                bash 'python3 app.py'
                 echo 'in build checking'
             }
         }

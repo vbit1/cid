@@ -11,19 +11,15 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                bash 'pip install -r requirements.txt'
+                // installed req
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'python -m unittest discover -s . -p "test_*.py"'
-            }
-        }
-
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t sample-python-app:latest .'
+                //running tests
+                bash 'python -m unittest discover -s . -p "test_*.py"'
             }
         }
 

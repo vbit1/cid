@@ -9,7 +9,8 @@ pipeline {
         }
        stage('Build') {
             steps {
-                bash 'python app.py'
+                //bash 'python app.py'
+                echo 'in build'
             }
         }
         stage('After build Stage') { 

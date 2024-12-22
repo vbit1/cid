@@ -5,6 +5,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Clone the repository
+                echo 'checkout code..>>'
                 checkout scm
             }
         }

@@ -18,7 +18,7 @@ pipeline {
                 script {
                     try {
                         // Check if bash is available
-                        sh 'which bash || echo "bash not found"'
+                        bash 'which bash || echo "bash not found"'
                     } catch (Exception e) {
                         echo "Error: ${e.message}"
                     }

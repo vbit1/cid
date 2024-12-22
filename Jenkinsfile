@@ -15,7 +15,7 @@ pipeline {
         }
        stage('Build') {
             steps {
-                bash 'python3 app.py'
+                sh 'echo $PATH'
                 echo 'in build checking'
             }
         }

@@ -10,7 +10,7 @@ pipeline {
        stage('Build') {
             steps {
                 //bash 'python app.py'
-                echo 'in build'
+                echo 'in build checking'
             }
         }
         stage('After build Stage') { 

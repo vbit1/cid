@@ -13,7 +13,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/vbit1/cid.git'
             }
         }
-       stage('Build') {
+       stage('Check for Bash') {
             steps {
                 script {
                     try {
@@ -23,7 +23,6 @@ pipeline {
                         echo "Error: ${e.message}"
                     }
                 }
-            }
             }
         }
         stage('After build Stage') { 

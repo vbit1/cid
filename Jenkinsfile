@@ -2,13 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                // Clone the repository
-                echo 'checkout code..>>'
-                checkout scm
-            }
-        }
 
         stage('Install Dependencies') {
             steps {

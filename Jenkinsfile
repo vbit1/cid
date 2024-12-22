@@ -7,15 +7,14 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stages{
-            stage('Build')
-            steps{
+       stage('Build') {
+            steps {
                 sh 'python app.py'
             }
         }
         stage('After build Stage') { 
             steps {
-                echo 'This is another stage'
+                echo 'This is afte build stage'
             }
         } 
     }

@@ -7,12 +7,6 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Checkout') {
-            steps {
-                // Checkout code from SCM (replace with your SCM )
-                git branch: 'main', url: 'https://github.com/vbit1/cid.git'
-            }
-        }
        stage('Check for Bash') {
             steps {
                 script {

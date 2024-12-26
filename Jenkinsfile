@@ -7,16 +7,17 @@ pipeline {
                 echo 'Hello World'
             }
         }
-       stage('Check for Bash') {
+       stage('Checkout') {
             steps {
-                script {
-                    try {
-                        // Check if bash is available
-                        bash 'which bash || echo "bash not found"'
-                    } catch (Exception e) {
-                        echo "Error: ${e.message}"
-                    }
-                }
+                git branch: 'main', url: 'https://github.com/your/repo.git' 
+            }
+        }
+        stage('Build') {
+            steps {
+                //sh 'python -m venv venv' 
+                //sh 'source venv/bin/activate'
+                //sh 'pip install -r requirements.txt'
+                sh 'python app.py'
             }
         }
         stage('After build Stage') { 
